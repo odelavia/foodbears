@@ -1,0 +1,49 @@
+{
+  "name": "foodbears-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "transpile": "tsc --watch",
+    "watch": "nodemon dist/server.js",
+    "start": "concurrently 'npm:transpile' 'npm:watch'",
+    "build": "rimraf dist/ && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.1",
+    "sequelize-fixtures": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^2.0.0",
+    "@types/dotenv": "^4.0.3",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.9.4",
+    "@types/sequelize": "^4.27.25",
+    "concurrently": "^4.0.1",
+    "dotenv": "^6.0.0",
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-util": "^3.0.8",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.{ts,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
