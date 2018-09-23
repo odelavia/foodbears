@@ -74,8 +74,8 @@ See link below for instructions on how to get your development environment setup
 [Jason Kim](https://github.com/jtk3068)
 [Lucas Taboada](https://github.com/LucasTaboada)
 [Oliver De La Via](https://github.com/odelavia)
-[Karthic]
-[Simon]
+[Simon VBD](https://github.com/Jarrku)
+[Karthik G](https://github.com/karthikgg)
 
 ## License
 This project was created in association with [Chingu Coders](https://github.com/chingu-voyage5) through [Chingu](https://chingu.io/).
