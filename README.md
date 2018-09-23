@@ -12,6 +12,8 @@
 * [Contributors](#contributors)
 * [License](#license)
 
+## DISCLAIMER
+This builds upon a sanitized clone of my [2 Bears App](https://github.com/chingu-voyage5/2-Bears). To see all the original git commits, check out that repository [here](https://github.com/chingu-voyage5/2-Bears).
 
 ## About
 Foodbears is a free mobile food ordering app that generates a QR Code as a ticket that a server can then pickup and scan to associate your order with you! As an Admin, you can login and change the category names, order items, their price, and more! We worked hard to provide you an immersive experience for your viewing pleasure. The APIs used were provided by [Stripe](https://stripe.com/docs) and [QR Code Generator API (TBD)](#)
