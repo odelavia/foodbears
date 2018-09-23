@@ -1,62 +1,39 @@
 import React, { Component } from 'react';
+import { View, StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  StatusBar
-} from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import reducers from './reducers/index';
+import Router from './Router';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const logger = createLogger({});
+const middleware = [
+    thunkMiddleware,
+    logger,
+];
+const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
+const store = createStoreWithMiddleware(reducers);
+console.disableYellowBox = true;
 
+// const ConnectedRouter = connect() (Router);
 export default class App extends Component {
-  componentDidMount() {
-    SplashScreen.hide()
-  }
+    componentDidMount() {
+        SplashScreen.hide()
+    }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar
-          barStyle="dark-content"
-          backgroundColor="#4F6D7A"
-        />
-        <Text style={styles.welcome}>
-          Welcome to foodbears!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+    render() {
+        return (
+            <Provider store={store}>
+                <View style={{ flex: 1 }}>
+                    <StatusBar
+                        barStyle="dark-content"
+                        backgroundColor="#4F6D7A"
+                    />
+                    <Router />
+                </View>
+            </Provider>
     );
-  }
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#000',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#000',
-    marginBottom: 5,
-  },
-});
