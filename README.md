@@ -1,5 +1,5 @@
 # Foodbears App
-> A Non-Profit Mobile Food Ordering Point of Sale App
+> A Mobile Food Ordering Point of Sale App
 
 ## Table of Contents
 * [About](#about)
