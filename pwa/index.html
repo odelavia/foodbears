@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <script src="http://localhost:8097"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        new Promise ((resolve, reject) => {
+          resolve(document.querySelector('#loader').firstElementChild.innerHTML = 'LOADING');
+        }).then(() => {
+          setTimeout(() => {
+            const wrapper = document.querySelector('.wrapper')
+            if (wrapper.classList) {
+              wrapper.classList.add('loaded')
+            }
+          }, 1500);
+        })
+      });
+    </script>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Roboto+Mono:300,400,500,700|Roboto:300,400,500,700,900">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <title>foodbears</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="loader-wrapper">
+        <div id="loader">
+          <p></p>
+          <div class="circ-one"></div>
+          <div class="circ-two"></div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
+      <div id="root"></div>
+    </div>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  </body>
+</html>
