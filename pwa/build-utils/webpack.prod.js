@@ -2,7 +2,7 @@ const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // compress/minify js
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); // create separate css file for production
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // minifies css files
-const common = require('./build-utils/webpack.common.js');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
