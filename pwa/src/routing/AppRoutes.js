@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 // import Navbar from '../components/common/Navbar';
-import Home from '../components/Home';
+import Home from '../organisms/Home';
 // import Four04 from '../components/Four04';
 // import Footer from '../components/common/Footer'
 
