@@ -1,26 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getCategories } from '../actions';
 import CategoryCard from '../atoms/CategoryCard';
-import categories from '../seedData/foodItemSeed';
 
 class FoodCategoryList extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      categories: this.props.categories,
+    }
     this.getCategoryList = this.getCategoryList.bind(this);
   }
 
+  async componentDidMount() {
+    await this.props.dispatch(getCategories())
+    this.setState({
+      categories: this.props.categories
+    })
+  }
+
   getCategoryList(list) {
-    console.log(list.data[0].category);
-    return list.data.map((item, index) => <CategoryCard key={index} item={item} category={item.category} />)
+    return list.map((item, index) => <CategoryCard key={index} item={item} category={item.category} />)
   }
 
   render() {
     return (
       <div>
-        {this.getCategoryList(categories)}
+        {this.getCategoryList(this.state.categories)}
       </div>
     );
   }
 }
 
-export default FoodCategoryList;
+const mapStateToProps = (state) => {
+  return {
+    categories: state.foodItems.categories,
+  };
+};
+
+export default connect(mapStateToProps)(FoodCategoryList);

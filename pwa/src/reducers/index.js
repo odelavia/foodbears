@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
+import foodItemReducer from './foodItemReducer';
 
-const reducer = combineReducers({
-  // navBar: navbar__reducer,
-  index : () => []
-
+const RootReducer = combineReducers({
+  foodItems: foodItemReducer,
 });
 
-export default reducer;
+export default RootReducer;
