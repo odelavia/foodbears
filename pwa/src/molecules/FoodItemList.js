@@ -20,17 +20,16 @@ class FoodItemList extends Component {
     const getCategoryItems = getItemsOfSame(categoryDetails.data, hasSameCategory)
 
     this.setState({ categoryItems: getCategoryItems})
-    // this.props.dispatch(setCategoryItems(getCategoryItems));
   }
 
   getFoodItems(list) {
     console.log(list)
-    return list.map((item, index) => <FoodItem key={index} item={item} title={item.title} />)
+    return list.map((item, index) => <FoodItem key={index} item={item} title={item.title} description={item.description} />)
   }
 
   render() {
     return (
-      <div>{this.getFoodItems(this.state.categoryItems)}</div>
+      <div className="food-container">{this.getFoodItems(this.state.categoryItems)}</div>
     );
   }
 }

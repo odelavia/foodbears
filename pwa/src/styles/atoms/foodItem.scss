@@ -1,0 +1,40 @@
+.food-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 15px;
+  width: 100vw;
+  padding: 10px;
+}
+
+.food-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border-radius: 15px;
+  min-height: 100px;
+  padding: 22px 75px 0 75px;
+  background-color: #fff;
+  box-shadow: 0 10px 6px -6px rgba(119,119,119,.5);
+}
+
+.food-text {
+  width: 180px;
+}
+
+.food-title {
+
+}
+
+.food-description {
+  padding-top: 20px;
+}
+
+.item-review {
+  padding: 10px 0 20px 0;
+
+  .rating {
+    padding-bottom: 10px;
+  }
+}
