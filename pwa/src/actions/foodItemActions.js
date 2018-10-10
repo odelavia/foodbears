@@ -1,4 +1,4 @@
-import foodItems from '../SeedData/foodItemSeed';
+import foodItems from '../seedData/foodItemSeed';
 import { GET_CATEGORIES, SET_CATEGORY_ITEMS } from './types';
 
 export const getCategories = () => {

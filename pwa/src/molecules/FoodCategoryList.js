@@ -26,7 +26,7 @@ class FoodCategoryList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="category-container">
         {this.getCategoryList(this.state.categories)}
       </div>
     );

@@ -1,3 +1,19 @@
-a {
+.category-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  flex-wrap: wrap;
+  width: calc(100vw);
+  padding: 10px;
+}
+
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100%);
+  height: calc(33.33vw - 13px);
+  background-color: purple;
   color: black;
+  border-radius: 4px;
 }
