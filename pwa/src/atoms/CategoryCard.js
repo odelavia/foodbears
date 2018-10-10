@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CategoryCard extends Component {
   constructor(props) {
@@ -14,9 +15,9 @@ class CategoryCard extends Component {
   render() {
     const { category, item } = this.props;
     return (
-      <div onClick={() => this.onClick(category)}>
+      <Link to={{pathname:"/foodItemList",state:{ category: category } }}>
         {category}
-      </div>
+      </Link>
     );
   }
 
