@@ -28,9 +28,7 @@
   width: 180px;
 }
 
-.food-title {
-
-}
+.food-title {}
 
 .food-description {
   padding-top: 20px;
@@ -41,5 +39,43 @@
 
   .rating {
     padding-bottom: 10px;
+  }
+}
+
+.plate-image {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 31px;
+  margin-left: -25px;
+  background-color: #fff;
+  height: 80px;
+  width: 80px;
+  border-radius: 30px;
+  box-shadow:
+  /* Outer Plate Bevel */
+  inset 0 10px 3px 0 rgba(255,255,255,.5), /* Top */
+  inset 0 -1px 0px 0 rgba(119,119,119,.25), /* Bottom */
+  inset 0px 0 0.5px 0 rgba(0,0,0,.125), /* Left */
+  inset 0px 0 0px 0 rgba(0,0,0,.25), /* Right */
+  /* Outer Plate Shadow */
+  inset 0 0px 0px 0 rgba(0,0,0,.15),
+  0 8px 6px -6px rgba(119,119,119,.25);
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    border-radius: 30px;
+    box-shadow:
+      /* Inner Plate Shadow */
+      inset 0 0 1px 2px rgba(255,255,255,1), /* Top */
+      inset 0 3px 0.5px 1px rgba(119,119,119,.25) /* Top */
+      ;
   }
 }
