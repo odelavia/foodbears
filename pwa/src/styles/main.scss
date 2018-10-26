@@ -1,6 +1,7 @@
 @import './setup/variables';
 @import './loadingScreen/preloadingScreen'; //keep here so that file loads before everything else.
 @import './setup/base';
+@import './pages/foodCategories';
 @import './components/nav';
 @import './components/common/categoryCard';
 @import './components/common/foodItem';

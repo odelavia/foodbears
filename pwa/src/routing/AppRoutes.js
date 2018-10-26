@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Nav from '../components/Nav';
 // import Home from '../pages/Home';
@@ -9,13 +9,13 @@ import FoodCategories from '../pages/FoodCategories';
 
 const AppRoutes = () => (
   <HashRouter>
-    <div>
+    <Fragment>
       <Nav />
       <Switch>
         <Route exact path="/" component={FoodCategories} />
         <Route path="/foodItems" component={FoodItems} />
       </Switch>
-    </div>
+    </Fragment>
   </HashRouter>
 );
 
