@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import categoryDetails from '../seedData/foodItemSeed';
-import FoodItem from '../commonComponents/FoodItem';
+import FoodItem from '../components/common/FoodItem';
 
 class FoodItemList extends Component {
   constructor(props) {

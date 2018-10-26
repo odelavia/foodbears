@@ -15,7 +15,7 @@ class CategoryCard extends Component {
   render() {
     const { category, item } = this.props;
     return (
-      <Link className="category-card" to={{pathname:"/foodItemList",state:{ category: category } }}>
+      <Link className="category-card" to={{pathname:"/foodItems",state:{ category: category } }}>
         {category}
       </Link>
     );

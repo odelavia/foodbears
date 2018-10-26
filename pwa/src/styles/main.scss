@@ -1,9 +1,9 @@
 @import './setup/variables';
 @import './loadingScreen/preloadingScreen'; //keep here so that file loads before everything else.
 @import './setup/base';
-@import './organisms/home';
-@import './atoms/categoryCard';
-@import './atoms/foodItem';
+@import './components/nav';
+@import './components/common/categoryCard';
+@import './components/common/foodItem';
 // @import './components/common/footer';
 // @import './components/common/navbar';
 // @import './components/four04';

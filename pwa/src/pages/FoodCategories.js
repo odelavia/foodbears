@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCategories } from '../actions';
-import CategoryCard from '../commonComponents/CategoryCard';
+import CategoryCard from '../components/common/CategoryCard';
 
 class FoodCategoryList extends Component {
   constructor(props) {
