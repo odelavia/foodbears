@@ -1,5 +1,5 @@
 import React from 'react';
-import FoodCategoryList from '../molecules/FoodCategoryList';
+import FoodCategoryList from '../components/FoodCategoryList';
 
 const Home = () => (
   <div>
