@@ -10,11 +10,11 @@ import FoodCategories from '../pages/FoodCategories';
 const AppRoutes = () => (
   <HashRouter>
     <Fragment>
-      <Nav />
       <Switch>
         <Route exact path="/" component={FoodCategories} />
         <Route path="/foodItems" component={FoodItems} />
       </Switch>
+      <Nav />
     </Fragment>
   </HashRouter>
 );
