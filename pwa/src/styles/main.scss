@@ -2,10 +2,9 @@
 @import './loadingScreen/preloadingScreen'; //keep here so that file loads before everything else.
 @import './setup/base';
 @import './pages/foodCategories';
-@import './components/nav';
+@import './components/sidenav';
+@import './components/bottomnav';
 @import './components/common/categoryCard';
 @import './components/common/foodItem';
-// @import './components/common/footer';
-// @import './components/common/navbar';
 // @import './components/four04';
 

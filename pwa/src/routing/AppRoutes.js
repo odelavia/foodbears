@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import Nav from '../components/Nav';
-// import Home from '../pages/Home';
+import SideNav from '../components/SideNav';
 import FoodItems from '../pages/FoodItems';
 import FoodCategories from '../pages/FoodCategories';
+import BottomNav from '../components/BottomNav';
 // import Four04 from '../components/Four04';
-// import Footer from '../components/common/Footer'
 
 const AppRoutes = () => (
   <HashRouter>
@@ -14,7 +13,8 @@ const AppRoutes = () => (
         <Route exact path="/" component={FoodCategories} />
         <Route path="/foodItems" component={FoodItems} />
       </Switch>
-      <Nav />
+      <SideNav />
+      <BottomNav />
     </Fragment>
   </HashRouter>
 );
