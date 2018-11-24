@@ -5,6 +5,8 @@
   align-items: center;
   grid-gap: 15px;
   width: 100vw;
+  max-height: calc(100vh - 50px);
+  overflow-y: scroll;
   padding: 60px 10px 10px 10px;
 }
 
