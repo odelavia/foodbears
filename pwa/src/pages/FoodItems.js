@@ -1,37 +1,47 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import categoryDetails from '../seedData/foodItemSeed';
+import { setCategoryItems } from '../actions';
 import FoodItem from '../components/common/FoodItem';
 
 class FoodItemList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      categoryItems: '',
-    }
-  }
 
   componentWillMount() {
-    const categoryPick = this.props.location.state.category;
+    const { location, dispatch } = this.props;
+    const categoryPick = location.state.category;
 
     const getItemsOfSame = (inputArray, callback) => inputArray.filter(callback)
     const hasSameCategory = (a) => ('category', a.category == categoryPick)
 
     const getCategoryItems = getItemsOfSame(categoryDetails.data, hasSameCategory)
-
-    this.setState({ categoryItems: getCategoryItems})
+    dispatch(setCategoryItems(getCategoryItems));
   }
 
   getFoodItems(list) {
     console.log(list)
-    return list.map((item, index) => <FoodItem key={index} item={item} title={item.title} description={item.description} />)
+    return (
+      list.map((item, index) => (
+        <FoodItem
+          key={index}
+          item={item}
+          title={item.title}
+          description={item.description}
+        />
+      ))
+    )
   }
 
   render() {
     return (
-      <div className="food-container">{this.getFoodItems(this.state.categoryItems)}</div>
-    );
+      <div className="food-container">{this.getFoodItems(this.props.categoryItems)}</div>
+      );
   }
 }
 
-export default FoodItemList;
+const mapStateToProps = (state) => {
+  return {
+    categoryItems: state.foodItems.categoryItems,
+  };
+};
+
+export default connect(mapStateToProps)(FoodItemList);

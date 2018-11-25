@@ -2,6 +2,7 @@ import { GET_CATEGORIES, SET_CATEGORY_ITEMS } from '../actions/types';
 
 const initialState = {
   categories: [],
+  categoryItems: [],
 }
 
 export default (state = initialState, action) => {
